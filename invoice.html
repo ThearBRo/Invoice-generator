@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice generator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>🧾 Live Invoice Generator</h1>
+
+    <!-- Customer && Date Input -->
+
+      <label for="customer_id">Customer Name:</label><br />
+      <input type="text" id="customer_id" name="customer_id" onchange="handleCustomer()"/><br />
+
+      <label for="date_id">Invoice Date:</label><br />
+      <input type="date" id="date_id" name="date_id" onchange="handleDate()"/><br />
+
+      <h2>Add Item</h1>
+        
+    <!-- [ Item, Quantity, Price ] Input -->
+
+
+    <form method="post">
+
+      <input
+        style="margin-left: 20px"
+        type="text"
+        placeholder="item name"
+        id="item_name_id"
+        name="item_name_id"
+        onchange=""
+      />
+      <input
+        style="width: 70px"
+        type="number"
+        placeholder="qty"
+        id="qty_id"
+        name="qty_id"
+      />
+
+      <input
+        style="width: 100px"
+        type="number"
+        placeholder="Price"
+        id="price_id"
+        name="price_id" 
+      />
+
+      <button style="height: 30px" type="button" onclick="validateInput()" >Add item</button>
+      <span id="alert"></span>
+    </form>
+    <h2>Items List</h2>
+    <table class="items_list" style="width: 100%;">
+      <tr>
+        <th style="width: 5%;">#</th>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+        <th style="width: 5%;">Remove</th>
+      </tr>
+
+      <!-- Test Data Rendering -->
+
+      <!-- <tr>
+        <td>1</td>
+        <td>iphone</td>
+        <td>2</td>
+        <td>500.00</td>
+        <td>1000.00</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>PC</td>
+        <td>3</td>
+        <td>900.00</td>
+        <td>2700.00</td>
+      </tr> -->
+
+      <!-- Data Added Rendering -->
+
+      <tbody id="result_table_row"></tbody>
+
+    </table>
+
+    <p>Discount (%): <input style="width: 70px;" type="number" id="discount_id" onchange="handleDiscount()" ></p>
+
+    <p>VAT (%): <input style="width: 70px;" type="number" id="vat_input_id" onchange="handleVat()" ></p>
+
+    <h2>Invoice Sumarry</h2>
+
+    <!-- Summary output -->
+
+    <h3>Customer: <span id="customer_by"></span></h3>
+    <h3>Date: <span id="date_by"></span></h3>
+  
+    <table class="total" style="width: 100%;">
+      <tr>
+        <th class="sub">Subtotal</th>
+        <td id="subtotal_id"></td>
+      </tr>
+      <tr>
+        <th class="sub">Discount (<span id="discount_id_render"></span>%)</th>
+        <td id="discount_id_price"></td>
+      </tr>
+      <tr>
+        <th class="sub">VAT (<span id="vat_id_render"></span>%)</th>
+        <td id="vat_id"></td>
+      </tr>
+      <tr>
+        <th class="sub">Grand Total</th>
+        <td id="grand_id"></td>
+      </tr>
+    </table>
+
+  </body>
+  <script src="./invoice.js"></script>
+</html>

@@ -1,0 +1,46 @@
+/* From : customer name To Items list */
+
+html {
+  font-family: sans-serif;
+}
+
+/* Input requirement for invoice */
+
+input {
+  border: gray solid 2px;
+  padding: 5px;
+}
+
+input:hover {
+  border: black solid 2px;
+  padding: 5px;
+}
+
+/* items list [ Style ] */
+
+.items_list {
+  background-color: black;
+}
+
+th {
+  background-color: rgb(232, 231, 231);
+  text-align: left;
+  padding: 10px;
+}
+
+td {
+  background-color: white;
+  text-align: left;
+  padding: 10px;
+  width: 300px;
+}
+
+/* invoice summary */
+
+.total {
+  background-color: black;
+}
+
+.sub {
+  background-color: white;
+}
